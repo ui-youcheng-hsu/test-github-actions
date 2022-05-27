@@ -9,6 +9,10 @@ jobs:
         with:
           node-version: 14
           cache: "yarn"
+      - uses: actions/cache@v3
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - run: yarn check_modules
       - run: yarn install --frozen-lockfile
       - run: yarn run:a
@@ -20,6 +24,10 @@ jobs:
         with:
           node-version: 14
           cache: "yarn"
+      - uses: actions/cache@v3
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - run: yarn check_modules
       - run: yarn install --frozen-lockfile
       - run: yarn run:a
