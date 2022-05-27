@@ -10,9 +10,12 @@ jobs:
           node-version: 14
           cache: "yarn"
       - uses: actions/cache@v3
+        id: yarn-cache
         with:
           path: "**/node_modules"
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
       - run: yarn check_modules
       - run: yarn install --frozen-lockfile
       - run: yarn run:a
@@ -25,9 +28,12 @@ jobs:
           node-version: 14
           cache: "yarn"
       - uses: actions/cache@v3
+        id: yarn-cache
         with:
           path: "**/node_modules"
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
       - run: yarn check_modules
       - run: yarn install --frozen-lockfile
       - run: yarn run:a
