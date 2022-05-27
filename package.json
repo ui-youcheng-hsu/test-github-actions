@@ -1,0 +1,17 @@
+{
+  "name": "test-github-action",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "repository": "git@github.com:ui-youcheng-hsu/test-github-actions.git",
+  "author": "YouCheng Hsu <youcheng.hsu@ui.com>",
+  "license": "MIT",
+  "scripts": {
+    "check_modules": "node ./check_modules.js",
+    "run:a": "node ./script_a.js",
+    "run:b": "node ./script_b.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1"
+  }
+}
