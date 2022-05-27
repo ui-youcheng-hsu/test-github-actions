@@ -8,9 +8,9 @@ jobs:
         with:
           node-version: 14
           cache: "yarn"
-      - yarn check_modules
-      - yarn install --frozen-lockfile
-      - yarn run:a
+      - run: yarn check_modules
+      - run: yarn install --frozen-lockfile
+      - run: yarn run:a
   Script-B:
     runs-on: ubuntu-latest
     steps:
@@ -18,6 +18,6 @@ jobs:
         with:
           node-version: 14
           cache: "yarn"
-      - yarn check_modules
-      - yarn install --frozen-lockfile
-      - yarn run:a
+      - run: yarn check_modules
+      - run: yarn install --frozen-lockfile
+      - run: yarn run:a
