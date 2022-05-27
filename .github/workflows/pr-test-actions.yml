@@ -1,0 +1,23 @@
+name: PR Test Actions
+on: pull_request
+jobs:
+  Script-A
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14
+          cache: 'yarn'
+      - yarn check_modules
+      - yarn install --frozen-lockfile
+      - yarn run:a
+  Script-B
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14
+          cache: 'yarn'
+      - yarn check_modules
+      - yarn install --frozen-lockfile
+      - yarn run:a
