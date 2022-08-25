@@ -40,7 +40,7 @@ jobs:
       - name: Commit Icons
         run: git add . && git commit -m "feat:update icons from github action"
       - name: Push Branch
-        run: git push -u origin "icons-fetch/${{ steps.vars.outputs.sha_short }}""
+        run: git push -u origin HEAD:"icons-fetch/${{ steps.vars.outputs.sha_short }}""
       - name: Create PR
         run: gh pr create -t "Icons Fetched By Github Actions" -B v6
         env:
