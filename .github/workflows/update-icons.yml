@@ -42,6 +42,6 @@ jobs:
       - name: Push Branch
         run: git push -u origin HEAD:"icons-fetch/${{ steps.vars.outputs.sha_short }}"
       - name: Create PR
-        run: gh pr create -t "Icons Fetched By Github Actions" -B v6 -b "Create by Github Action"
+        run: gh pr create -t "Icons Fetched By Github Actions" -B main -b "Create by Github Action"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
