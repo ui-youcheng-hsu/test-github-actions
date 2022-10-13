@@ -1,5 +1,8 @@
 name: "Chromatic"
-on: pull_request
+on:
+  push:
+    branches:
+      - main
 jobs:
   chromatic-deployment:
     runs-on: ubuntu-latest
@@ -22,6 +25,8 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Publish to Chromatic
+        if: github.ref == 'refs/heads/main'
         uses: "./.github/actions/chromaui"
         with:
           projectToken: 2cf383fc07a1
+          autoAcceptChanges: true
