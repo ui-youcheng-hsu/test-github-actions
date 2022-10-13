@@ -26,7 +26,7 @@ button + button {
 }
 
 .welcome {
-  color: red;
+  color: #333;
   font-size: 14px;
   margin-right: 10px;
 }
