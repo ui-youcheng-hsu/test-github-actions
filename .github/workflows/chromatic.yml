@@ -24,4 +24,4 @@ jobs:
       - name: Publish to Chromatic
         uses: "./.github/actions/chromaui"
         with:
-          projectToken: 2cf383fc07a1
+          projectToken: a8e2da454841
