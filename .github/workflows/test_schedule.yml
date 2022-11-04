@@ -1,0 +1,17 @@
+name: FETCH-ICONS
+
+on:
+  workflow_dispatch:
+    inputs:
+      desc_input:
+        description: "test"
+  schedule:
+    - cron: "*/1 * * * *"
+  with:
+    desc_input: "asd"
+
+jobs:
+  TEST:
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo "${{ github.event.inputs.desc_input }}"
