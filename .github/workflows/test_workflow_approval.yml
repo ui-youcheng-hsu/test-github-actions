@@ -10,6 +10,7 @@ jobs:
           name: asset
           path: ./test.txt
   ECHO:
+    needs: [GEN]
     runs-on: ubuntu-latest
     environment:
       name: prod
