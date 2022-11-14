@@ -1,0 +1,22 @@
+on: push
+
+jobs:
+  GEN:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "ABC" > test.txt
+      - uses: actions/upload-artifact@v3
+          with:
+            name: asset
+            path: ./test.txt
+  ECHO:
+    runs-on: ubuntu-latest
+    environment:
+      name: prod
+    steps:
+      - uses: actions/download-artifact@v3
+          with:
+            name: asset
+            path: ./test.txt
+      - run: cat ./test.txt
+        
